@@ -10,14 +10,17 @@ class StartPage extends Page {
         return super.open('');
     } 
 
-    acceptCookies () {
+    async acceptCookies () {
         if ($('.btn.btn-secondary.rhythm-button.toast-close').isDisplayed()) {
         return $('.btn.btn-secondary.rhythm-button.toast-close').click(); }
     }
 
-    loginUser (username) {
-        await $('.nav-button.logged-out-navigation__log-in-button').click();
-        await $('#generic-login-option-amplify > div').click();
+    async clickLogin () {
+        return $('.nav-button.logged-out-navigation__log-in-button').click();
+    }
+
+    async loginAsAmplifyUser (username) {
+        await $('.white-pill-button.login-option.amplify').click();
         await $('#amplify-login-username-input').addValue(username);
         await $('#amplify-login-password-input').addValue('Demo1234');
         return $('#amplify-login-submit-button').click();
