@@ -7,6 +7,8 @@ describe('Amplify.com: the user should go to ', () => {
         await expect($('.nav-button.amp-nav-logo.logged-out-navigation__logo').toBeVisible())
 
         await StartPage.acceptCookies();
+
+        //await StartPage.loginUser('soldbyvolume@hotmail.com');
     })
 })
 
